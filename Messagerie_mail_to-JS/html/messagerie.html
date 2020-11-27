@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title> 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap');
+      
+    *{
+        box-sizing: border-box;
+    }
+    body, html {
+        padding: 0;
+        margin: 0; 
+        background-color: rgb(31, 31, 31);
+        min-height: 650px;  
+    }
+    /* HEADER CONTENU  */
+    header{
+        padding: 0;
+        margin: 0;
+        background-color: rgb(31, 31, 31);
+    }
+    h1{
+        font-family: 'Staatliches', cursive;
+        text-align: center;
+        font-size: 2rem;
+        color: rgb(255, 255, 255);
+        letter-spacing: 2rem;
+        margin: 50px;
+        padding:0 100px 0 100px;
+    }
+    p{
+        font-family: 'Staatliches', cursive;
+        text-align: center;
+        font-size: 1rem;
+        color: rgb(204, 207, 25);
+        letter-spacing: 0.5rem;
+        padding:0 100px 0 100px;
+    }
+    @media only screen and (max-width: 943px) {
+        h1{
+            font-size: 1.25rem;
+            color: rgb(255, 255, 255);
+            letter-spacing: 1rem;
+            margin: 50px;
+            padding:0 100px 0 100px;
+            text-align: center;
+        }
+        p{
+            font-family: 'Staatliches', cursive;
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgb(204, 207, 25);
+            letter-spacing: 0.25rem;
+            padding:0 90px 0 90px;
+        }
+        img{
+            width: 80px;
+            height: 80px;
+        }
+    }
+    @media only screen and (max-width: 1080px) {
+        p{
+            font-size:0.85rem;
+        }
+    }
+
+    /* FORMULAIRE DE CONTACT */
+    .contact_form{
+        font-family: 'Staatliches', cursive;
+        background: rgb(55, 55, 55);
+        color: rgb(119, 119, 119);
+        letter-spacing: 5px;
+        display: flex;
+        flex-direction: column;
+        margin:50px;
+        /* padding: 20px; */
+        border-radius: 10px 10px;
+        /* align-content: center; */
+    }
+    .name, .email, .message{
+        font-family: 'Staatliches', cursive;
+        background-color: rgb(44, 44, 44);
+        border-radius: 5px 0px;
+        padding: 10px;
+        color: white;
+    }
+    input{
+        color: white;
+    }
+    label{
+        padding-top: 15px;
+        margin-left: 10px;
+        color: rgb(255, 255, 255);
+        font-size: 1rem;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 12px;
+    }
+    .message::placeholder{
+        padding: 10px;
+        letter-spacing: 10px;
+        color: rgb(89, 88, 88);
+    }
+    .name::placeholder{
+        padding: 10px;
+        letter-spacing: 10px;
+        color: rgb(89, 88, 88);
+    }
+    .email::placeholder{
+        padding: 10px;
+        letter-spacing: 10px;
+        color: rgb(89, 88, 88);
+    }
+    @media only screen and (min-width: 650px) {
+        .contact_form{
+            margin:20px 100px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+     
+    }
+    @media only screen and (min-width: 1000px) {
+        .contact_form{
+            margin:40px 120px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+    }
+    button[type="submit"]{ 
+        height: 70px;
+        width:100%;
+        font-family: 'Staatliches', cursive;
+        background: rgb(102,101,16);
+        border: rgb(55, 55, 55) 20px solid;
+        background: linear-gradient(7deg, rgba(102,101,16,1) 25%, rgba(182,181,24,1) 72%, rgba(255,252,16,1) 94%);
+        border-radius: 20px;
+        letter-spacing: 5px;
+        font-size: 1.25rem;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        color:white;
+        cursor: pointer;
+        transition: .3s ease background-color;
+    }
+    button[type="submit"]:hover{
+        background: black;
+    }
+    /* vérification validé/erreur pour envoi du contact */
+    #status{
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        /* padding: 5px; */
+        margin: 0 auto;
+        border-radius: 8px;
+        color: white;
+        letter-spacing: 5px;
+        font-family: 'Staatliches', cursive;
+    } 
+    #status.success{
+        background-color: rgb(64, 148, 71);
+        color: black;
+        animation: status 4s ease forwards;
+    } 
+    #status.error{
+        background-color: rgb(109, 3, 26);
+        color: white;
+        animation: status 4s ease forwards;
+    } 
+    @keyframes status{
+        0%{
+            opacity: 1;
+            pointer-events: all;
+        }90%{
+            opacity: 1;
+            pointer-events: all;
+        }100%{
+            opacity: 0;
+            pointer-events:none;
+        }
+    }
+    </style>
+  
+</head>
+<body>
+
+    <header>
+        <img src="../assets/image/logo.png" style="width:80px; height: 80px; margin:5px 30px; float:right" alt="logo rotavele en cercle. typographie pixel, en niveau de gris"></img>
+        <h1>Contactez moi</h1>
+        <p>Envoyez moi un message et vous aurez une réponse dans les 24H</p>
+    </header>
+    
+        <div class="main">
+            <form action="https://formspree.io/f/mgeplykn" method="POST" class="contact_form" id="my-form">
+                <label for="">Nom</label><br />
+                <input class="name" name="name" type="text" placeholder="&Eacute;crivez votre nom" required/><br />
+
+                <label for="">Email</label><br />
+                <input class="email" name="email" type="email" placeholder="&Eacute;crivez votre email" required/><br />
+
+                <label for="">Message</label><br />
+                <textarea class="message" name="message" id="" cols="30" rows="10" placeholder="&Eacute;crivez votre message" required></textarea><br />
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+        <div id="status" ></div>
+   
+
+<script src="../js/messagerie.js"></script>
+</body>
+</html>
